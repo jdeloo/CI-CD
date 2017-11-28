@@ -29,7 +29,7 @@ const maxWaitMinsForAppStarting = 10;
 
 
 //constants
-const https = require('~/.nvm/node_modules/sync-request');
+const https = require('/.nvm/node_modules/sync-request');
 
 
 function syncRequest(method,url,options){
