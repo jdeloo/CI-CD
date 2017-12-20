@@ -321,7 +321,7 @@ getApps(headers, function(appObjs){
 		
 		getEnvironmentPackage(headers,appId,environment,function(environmentStatus){
 			
-			if(branch.LatestRevisionNumber > environmentStatus.Version.substring(environmentStatus.Version.lastIndexOf('.')+1)){
+			//if(branch.LatestRevisionNumber > environmentStatus.Version.substring(environmentStatus.Version.lastIndexOf('.')+1)){
 				//build the latest revision of the branch
 				startBuild(headers,appId,branch.Name,branch.LatestRevisionNumber,function(packageId){
 					console.log('Started building package for revision ' + branch.LatestRevisionNumber)
@@ -351,10 +351,10 @@ getApps(headers, function(appObjs){
 						
 					})},packageCheckingInterval,headers,appId,packageId); 
 				});
-			} else {
-				console.log('Latest revision already deployed on ' + environment);
+			//} else {
+			//	console.log('Latest revision already deployed on ' + environment);
 				//if latest version already deployed, but app not started yet, then we are stuck...
-			}
+			//}
 		});
 	});	
 });
